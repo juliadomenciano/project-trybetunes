@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import { createUser } from '../services/userAPI';
 
 class Login extends React.Component {
@@ -6,6 +7,8 @@ class Login extends React.Component {
     super();
     this.state = {
       loginName: '',
+      redirect: false,
+      buttonValidation: true,
     };
   }
 
@@ -13,17 +16,37 @@ class Login extends React.Component {
     const { value } = target;
     this.setState({
       [target.name]: value,
-    });
-    console.log(createUser);
+    }, this.handleButton);
   }
 
-  render() {
+  handleButton = () => {
     const { loginName } = this.state;
+    if (loginName.length >= 3) {
+      this.setState({
+        buttonValidation: false,
+      });
+    }
+  }
+
+  handleClick = () => {
+    const { loginName } = this.state;
+    createUser({ name: loginName });
+    this.setState({
+      redirect: true,
+    });
+  }
+
+  /*   componentWillUnmount() {
+    alert('carregando...');
+  }
+ */
+  render() {
+    const { loginName, redirect, buttonValidation } = this.state;
     return (
 
       <div data-testid="page-login">
-
         <h1>Login!</h1>
+
         <label htmlFor="name">
           <input
             type="text"
@@ -33,14 +56,17 @@ class Login extends React.Component {
             onChange={ this.handlechange }
           />
         </label>
+
         <button
           type="button"
           data-testid="login-submit-button"
-          onClick={ () => createUser({ name: loginName }) }
+          disabled={ buttonValidation }
+          onClick={ this.handleClick }
         >
           Entrar
-
         </button>
+
+        {redirect && <Redirect to="/search" />}
 
       </div>
 

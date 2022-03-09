@@ -21,7 +21,8 @@ class Login extends React.Component {
 
   handleButton = () => {
     const { loginName } = this.state;
-    if (loginName.length >= 3) {
+    const num = 3;
+    if (loginName.length >= num) {
       this.setState({
         buttonValidation: false,
       });

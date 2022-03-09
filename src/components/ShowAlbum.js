@@ -5,15 +5,13 @@ import { Link } from 'react-router-dom';
 class ShowAlbum extends React.Component {
   render() {
     console.log(this);
-    const { albumsAndArtists, artistName } = this.props;
+    const { albumsAndArtists, artistName, click } = this.props;
     return (
       <div>
         {
-          albumsAndArtists.length === 0
+          click && albumsAndArtists.length > 0
 
-            ? <h2> Nenhum álbum fotrado </h2>
-
-            : (
+            && (
               <div>
                 <h2>
                   Resultado de álbuns de:
@@ -43,6 +41,7 @@ class ShowAlbum extends React.Component {
 ShowAlbum.propTypes = {
   albumsAndArtists: PropTypes.arrayOf.isRequired,
   artistName: PropTypes.string.isRequired,
+  click: PropTypes.bool.isRequired,
 };
 
 export default ShowAlbum;

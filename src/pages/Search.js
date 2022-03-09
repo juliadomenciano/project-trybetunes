@@ -13,6 +13,7 @@ class Search extends React.Component {
       buttonValidation: true,
       waiting: false,
       albumsAndArtists: [],
+      click: false,
     };
   }
 
@@ -42,6 +43,7 @@ class Search extends React.Component {
       artistName: searchedName,
       searchedName: '',
       waiting: false,
+      click: true,
       albumsAndArtists: [...data],
     });
   }
@@ -53,6 +55,7 @@ class Search extends React.Component {
       waiting,
       albumsAndArtists,
       artistName,
+      click,
     } = this.state;
     return (
 
@@ -83,7 +86,12 @@ class Search extends React.Component {
             <ShowAlbum
               albumsAndArtists={ albumsAndArtists }
               artistName={ artistName }
+              click={ click }
             />) }
+        {
+          click && albumsAndArtists.length === 0
+              && <h2> Nenhum álbum foi encontrado </h2>
+        }
 
       </div>
     );

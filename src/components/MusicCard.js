@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Loading from '../pages/Loading';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, removeSong } from '../services/favoriteSongsAPI';
 
 class MusicCard extends React.Component {
   constructor() {
@@ -12,16 +12,43 @@ class MusicCard extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.LoadFavorites();
+  }
+
+  LoadFavorites = () => {
+    const { favSongs, obj } = this.props;
+    const song = favSongs;
+    const checkFav = song.some((item) => item.trackId === obj.trackId);
+    this.setState({
+      isFavorite: checkFav,
+    });
+  }
+
   handleCheckbox = async () => {
+    const { isFavorite } = this.state;
     this.setState({
       waiting: true,
     });
-    const { obj } = this.props;
-    await addSong(obj);
-    this.setState({
-      waiting: false,
-      isFavorite: true,
-    });
+    if (isFavorite) {
+      const { obj } = this.props;
+      await removeSong(obj);
+      this.setState({
+        waiting: false,
+        isFavorite: false,
+      });
+    } else {
+      const { obj } = this.props;
+      await addSong(obj);
+      this.setState({
+        waiting: false,
+        isFavorite: true,
+      });
+    }
+  }
+
+  removeFavorite = async () => {
+    await removeSong();
   }
 
   render() {
@@ -63,6 +90,7 @@ MusicCard.propTypes = {
   previewUrl: PropTypes.string,
   trackId: PropTypes.number,
   obj: PropTypes.objectOf(PropTypes.any),
+  favSongs: PropTypes.arrayOf(PropTypes.any),
 };
 
 MusicCard.defaultProps = {
@@ -70,6 +98,7 @@ MusicCard.defaultProps = {
   previewUrl: '',
   trackId: 0,
   obj: { '': '' },
+  favSongs: [],
 };
 
 export default MusicCard;

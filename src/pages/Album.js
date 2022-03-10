@@ -30,7 +30,7 @@ class Album extends React.Component {
       },
     } = this.props;
     const data = await getMusics(id);
-    console.log(data);
+    console.log(id);
     this.setState({
       songs: [...data],
       artistName: data[0].artistName,
@@ -43,7 +43,6 @@ class Album extends React.Component {
       waiting: true,
     });
     const favs = await getFavoriteSongs();
-    console.log(favs);
     this.setState({
       favSongs: [...favs],
       waiting: false,
@@ -51,10 +50,9 @@ class Album extends React.Component {
   }
 
   render() {
-    const { songs, artistName, collectionName, favSongs, waiting } = this.state;
+    const { songs, artistName, collectionName, waiting, favSongs } = this.state;
     return (
       <div data-testid="page-album">
-        {favSongs}
         <Header />
         {waiting ? <Loading />
           : (
@@ -70,6 +68,7 @@ class Album extends React.Component {
                   trackName={ item.trackName }
                   trackId={ item.trackId }
                   obj={ item }
+                  favSongs={ favSongs }
                 />))}
               </div>
             </div>

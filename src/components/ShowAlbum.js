@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 class ShowAlbum extends React.Component {
   render() {
-    console.log(this);
     const { albumsAndArtists, artistName, click } = this.props;
     return (
       <div>
@@ -39,9 +38,15 @@ class ShowAlbum extends React.Component {
 }
 
 ShowAlbum.propTypes = {
-  albumsAndArtists: PropTypes.arrayOf.isRequired,
-  artistName: PropTypes.string.isRequired,
-  click: PropTypes.bool.isRequired,
+  albumsAndArtists: PropTypes.arrayOf(PropTypes.any),
+  artistName: PropTypes.string,
+  click: PropTypes.bool,
+};
+
+ShowAlbum.defaultProps = {
+  albumsAndArtists: [],
+  artistName: '',
+  click: false,
 };
 
 export default ShowAlbum;

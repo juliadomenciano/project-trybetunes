@@ -37,10 +37,6 @@ class Login extends React.Component {
     });
   }
 
-  /*   componentWillUnmount() {
-    alert('carregando...');
-  }
- */
   render() {
     const { loginName, redirect, buttonValidation } = this.state;
     return (

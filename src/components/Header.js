@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Loading from '../pages/Loading';
 import { getUser } from '../services/userAPI';
 
@@ -37,14 +37,14 @@ class Header extends React.Component {
                  {name}
                </h1>
                <div>
-                 <NavLink to="/search" data-testid="link-to-search">Search</NavLink>
-                 <NavLink
+                 <Link to="/search" data-testid="link-to-search">Search</Link>
+                 <Link
                    to="/favorites"
                    data-testid="link-to-favorites"
                  >
                    Favorites
-                 </NavLink>
-                 <NavLink to="/profile" data-testid="link-to-profile">Profile</NavLink>
+                 </Link>
+                 <Link to="/profile" data-testid="link-to-profile">Profile</Link>
                </div>
              </header>)}
        </div>

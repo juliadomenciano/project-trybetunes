@@ -18,9 +18,9 @@ class Album extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.handleApi();
-    this.getFavorites();
+  async componentDidMount() {
+    await this.handleApi();
+    await this.getFavorites();
   }
 
   handleApi = async () => {

@@ -12,8 +12,12 @@ class MusicCard extends React.Component {
     };
   }
 
-  async componentDidMount() {
-    await this.LoadFavorites();
+  componentDidMount() {
+    this.LoadFavorites();
+  }
+
+  componentDidUpdate() {
+
   }
 
   LoadFavorites = () => {
@@ -27,6 +31,7 @@ class MusicCard extends React.Component {
 
   handleCheckbox = async () => {
     const { isFavorite } = this.state;
+    const { getFavorites } = this.props;
     this.setState({
       waiting: true,
     });
@@ -37,6 +42,7 @@ class MusicCard extends React.Component {
         waiting: false,
         isFavorite: false,
       });
+      getFavorites();
     } else {
       const { obj } = this.props;
       await addSong(obj);
@@ -44,6 +50,10 @@ class MusicCard extends React.Component {
         waiting: false,
         isFavorite: true,
       });
+    }
+
+    if (getFavorites) {
+      getFavorites();
     }
   };
 
@@ -76,6 +86,7 @@ class MusicCard extends React.Component {
                 checked={ isFavorite }
                 onChange={ this.handleCheckbox }
               />
+
             </label>
           </div>
         )}
@@ -90,6 +101,7 @@ MusicCard.propTypes = {
   trackId: PropTypes.number,
   obj: PropTypes.objectOf(PropTypes.any),
   favSongs: PropTypes.arrayOf(PropTypes.any),
+  getFavorites: PropTypes.func,
 };
 
 MusicCard.defaultProps = {
@@ -98,6 +110,7 @@ MusicCard.defaultProps = {
   trackId: 0,
   obj: { '': '' },
   favSongs: [],
+  getFavorites: () => 'oi',
 };
 
 export default MusicCard;

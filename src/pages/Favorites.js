@@ -42,6 +42,8 @@ class Favorites extends React.Component {
             trackId={ item.trackId }
             obj={ item }
             favSongs={ favSongs }
+            getFavorites={ this.getFavorites }
+
           />
         ))}
 

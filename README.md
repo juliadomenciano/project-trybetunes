@@ -10,7 +10,18 @@
     * Favorite and unfavorite songs;
     * View the list of favorite songs;
     * View the profile of the person logged in;
-    * Edit the profile of the person logged in;
+    * Edit the profile of the person logged in.
+
+
+### Note
+
+This project is in development.
+
+
+### In progress
+
+* [ ] CSS;
+* [ ] Refactoring.
 
 
 ## Tools
@@ -27,7 +38,7 @@
   * Create routes, mapping the URL path with the corresponding component, via `Route`;
   * Use the `Switch` of `React Router`
   * Use the `Redirect` component to redirect to a specific route;
-  * Create navigation links in the application with the `Link` component;
+  * Create navigation links in the application with the `Link` component.
 
 
 ------------------------------
@@ -45,7 +56,18 @@
     * Favoritar e desfavoritar músicas;
     * Ver a lista de músicas favoritas;
     * Ver o perfil da pessoa logada;
-    * Editar o perfil da pessoa logada;
+    * Editar o perfil da pessoa logada.
+
+
+### Observação
+
+  Este projeto está em desenvolvimento.
+
+
+### Em andamento
+
+  - [ ] CSS;
+  - [ ] Refatoração.
 
 
 ## Ferramentas
@@ -62,4 +84,4 @@
   * Criar rotas, mapeando o caminho da URL com o componente correspondente, via `Route`;
   * Utilizar o `Switch` do `React Router`
   * Usar o componente `Redirect` pra redirecionar para uma rota específica;
-  * Criar links de navegação na aplicação com o componente `Link`;
+  * Criar links de navegação na aplicação com o componente `Link`.

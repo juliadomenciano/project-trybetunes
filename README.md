@@ -1,4 +1,4 @@
-# TrybeTunes project
+# TrybeTunes Project
 
   Project developed during the Trybe software development course. In this project, TrybeTunes was developed, an application capable of playing songs from the most varied bands and artists, creating a list of favorite songs and editing the profile of the user logged in. This application is capable of:
 
@@ -26,7 +26,7 @@ This project is in development.
 
 ## Tools
 
-  * react
+  * React
 
 
 ## Skills Developed
@@ -41,7 +41,9 @@ This project is in development.
   * Create navigation links in the application with the `Link` component.
 
 
+
 ------------------------------
+
 
 
 # Projeto TrybeTunes

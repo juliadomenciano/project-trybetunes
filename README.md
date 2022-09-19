@@ -2,15 +2,15 @@
 
   Project developed during the Trybe software development course. In this project, TrybeTunes was developed, an application capable of playing songs from the most varied bands and artists, creating a list of favorite songs and editing the profile of the user logged in. This application is capable of:
 
-    * Login;
-    * Search for a band or artist;
-    * List available albums by that band or artist;
-    * View songs from a selected album;
-    * Play a preview of the songs on this album;
-    * Favorite and unfavorite songs;
-    * View the list of favorite songs;
-    * View the profile of the person logged in;
-    * Edit the profile of the person logged in.
+  * Login;
+  * Search for a band or artist;
+  * List available albums by that band or artist;
+  * View songs from a selected album;
+  * Play a preview of the songs on this album;
+  * Favorite and unfavorite songs;
+  * View the list of favorite songs;
+  * View the profile of the person logged in;
+  * Edit the profile of the person logged in.
 
 
 ### Note
@@ -48,15 +48,15 @@ This project is in development.
 
   Projeto desenvolvido durante o curso de desenvolvimento de software da Trybe. Neste projeto foi desenvolvido o TrybeTunes, uma aplicação capaz de reproduzir músicas das mais variadas bandas e artistas, criar uma lista de músicas favoritas e editar o perfil da pessoa usuária logada. Essa aplicação é capaz de:
 
-    * Fazer login;
-    * Pesquisar por uma banda ou artista;
-    * Listar os álbuns disponíveis dessa banda ou artista;
-    * Visualizar as músicas de um álbum selecionado;
-    * Reproduzir uma prévia das músicas deste álbum;
-    * Favoritar e desfavoritar músicas;
-    * Ver a lista de músicas favoritas;
-    * Ver o perfil da pessoa logada;
-    * Editar o perfil da pessoa logada.
+  * Fazer login;
+  * Pesquisar por uma banda ou artista;
+  * Listar os álbuns disponíveis dessa banda ou artista;
+  * Visualizar as músicas de um álbum selecionado;
+  * Reproduzir uma prévia das músicas deste álbum;
+  * Favoritar e desfavoritar músicas;
+  * Ver a lista de músicas favoritas;
+  * Ver o perfil da pessoa logada;
+  * Editar o perfil da pessoa logada.
 
 
 ### Observação
